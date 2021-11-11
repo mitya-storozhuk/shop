@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../shop-1/css/index.css">
+    <script src="../shop-1/js/render-cups.js"></script>
+    <script src="../shop-1/js/create-cup.js"></script>
+    <title>Shop</title>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header-buttons">
+            <a href="#" class="my-caps-button">My Cups</a>
+            <a href="#" class="create-cup-button" id="crtCup">Create cup</a>
+        </div>
+        <div class="search-buttons">
+            <input type="search" placeholder="Type something..." class="search">
+            <button class="blue-button">Search</button>
+            <button class="red-button">Cancel</button>
+        </div>
+    </header>
+    <main class="main-container">
+        <aside class="side-bar">
+            <h2>Manage cups</h2> 
+            <div class="sort-button">
+                <p>Sort by volume</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <p>Count total volume:</p> 
+            <button class="count-button blue-button">Count</button>
+            <p>Total volume: 1850 ml</p>
+            <div class="create-cup-header" id="create">
+                <div class="header-close-btn">
+                    <h2>Create Cup</h2>
+                    <span id="close">X</span>
+                </div>
+                <!-- <form> -->
+                    <label for="cname">Cup name:</label><br>
+                    <input type="text" id="cname" name="cname" value=""><br>
+                    <label for="cvolume">Cup volume:</label><br>
+                    <input type="text" id="cvolume" name="cvolume" value=""><br>
+                    <label for="cmaterial">Cup material:</label><br>
+                    <input type="text" id="cmaterial" name="cmaterial" value=""><br>
+                    <label for="ccolor">Cup color:</label><br>
+                    <select id="ccolor" name="ccolor">
+                        <option value="Red">Red</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                    </select><br>
+                    <button class="count-button blue-button" id="createNewCup">Create</button>
+                <!-- </form> -->
+            </div>
+        </aside>
+        <section class="cup-carts" id="cup-carts">
+        </section>
+        
+    </main>
+    <script src="../shop-1/js/main.js">
+    </script>
 </body>
 </html>
