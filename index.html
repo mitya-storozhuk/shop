@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shop-1/css/index.css">
     <script src="../shop-1/js/render-cups.js"></script>
-    <script src="../shop-1/js/create-cup.js"></script>
     <title>Shop</title>
 </head>
 <body>
@@ -16,49 +15,68 @@
             <a href="#" class="create-cup-button" id="crtCup">Create cup</a>
         </div>
         <div class="search-buttons">
-            <input type="search" placeholder="Type something..." class="search">
+            <input type="search" placeholder="Type something..." class="search" id="search">
             <button class="blue-button">Search</button>
             <button class="red-button">Cancel</button>
         </div>
     </header>
     <main class="main-container">
         <aside class="side-bar">
-            <h2>Manage cups</h2> 
-            <div class="sort-button">
-                <p>Sort by volume</p>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
+            <div class="manage-cups" id="total">
+                <h2>Manage cups</h2> 
+                <div class="sort-button">
+                    <p>Sort by volume</p>
+                    <label class="switch">
+                        <input type="checkbox" id="sort"> 
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <p>Count total volume:</p> 
+                <button class="count-button blue-button" id="count">Count</button>
+                <span class="total-count" id="totalCount"></span>
             </div>
-            <p>Count total volume:</p> 
-            <button class="count-button blue-button">Count</button>
-            <p>Total volume: 1850 ml</p>
             <div class="create-cup-header" id="create">
                 <div class="header-close-btn">
                     <h2>Create Cup</h2>
-                    <span id="close">X</span>
+                    <span id="createClose">X</span>
                 </div>
-                <!-- <form> -->
-                    <label for="cname">Cup name:</label><br>
-                    <input type="text" id="cname" name="cname" value=""><br>
-                    <label for="cvolume">Cup volume:</label><br>
-                    <input type="text" id="cvolume" name="cvolume" value=""><br>
-                    <label for="cmaterial">Cup material:</label><br>
-                    <input type="text" id="cmaterial" name="cmaterial" value=""><br>
-                    <label for="ccolor">Cup color:</label><br>
-                    <select id="ccolor" name="ccolor">
-                        <option value="Red">Red</option>
-                        <option value="Green">Green</option>
-                        <option value="Blue">Blue</option>
-                    </select><br>
-                    <button class="count-button blue-button" id="createNewCup">Create</button>
-                <!-- </form> -->
+                <label for="cname">Cup name:</label>
+                <input type="text" id="cname" name="cname" value="">
+                <label for="cvolume">Cup volume:</label>
+                <input type="text" id="cvolume" name="cvolume" value="">
+                <label for="cmaterial">Cup material:</label>
+                <input type="text" id="cmaterial" name="cmaterial" value="">
+                <label for="ccolor">Cup color:</label>
+                <select id="ccolor" name="ccolor">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+                <button class="count-button blue-button" id="createNewCup">Create</button>
+            </div>
+            <div class="edit-cup-header" id="edit">
+                <div class="edit-close-btn">
+                    <h2>Edit Cup</h2>
+                    <span id="editClose">X</span>
+                </div>
+                <input type="hidden" id="eid" name="eid" value="">
+                <label for="ename">Cup name:</label>
+                <input type="text" id="ename" name="ename" value="">
+                <label for="evolume">Cup volume:</label>
+                <input type="text" id="evolume" name="evolume" value="">
+                <label for="ematerial">Cup material:</label>
+                <input type="text" id="ematerial" name="ematerial" value="">
+                <label for="ecolor">Cup color:</label>
+                <select id="ecolor" name="ecolor">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+                <button class="count-button blue-button" id="editCup">Edit</button>
             </div>
         </aside>
         <section class="cup-carts" id="cup-carts">
-        </section>
-        
+        </section>    
     </main>
     <script src="../shop-1/js/main.js">
     </script>

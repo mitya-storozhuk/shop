@@ -9,7 +9,7 @@ let render = (elementId, cupsData) => {
             <p>Material: ${item.material}</p>
             <p>Color: ${item.color}</p>
             <div class="edit-buttons">
-                <button class="blue-button" id="edit">Edit</button>
+                <button class="blue-button edtCup" cup_id=${item.id}>Edit</button>
                 <button class="red-button" onclick="cupDelete(${item.id})">Delete</button>
             </div>
         </div>`
@@ -18,12 +18,13 @@ let render = (elementId, cupsData) => {
 };
 
 let cupDelete = (id) => {
+    let cups = getCups();
     for (let i = 0; i < cups.length; i++){
         if (cups[i].id === id) {
             cups.splice(i, 1); 
             break;
         }
     };
+    setCups(cups);
     render("cup-carts", cups);
 };
-
